@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TalkHub Chatting Server</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>TalkHub Chatting Server</h1>
+        <h2>Welcome, {{ session['username'] }}</h2>
+        <a href="/logout">Logout</a>
+    {% if messages %}
+        <div class="chat-box">
+            {% for message in messages %}
+                <div class="message {% if message['username'] == session['username'] %}sender-message{% else %}receiver-message{% endif %}">
+                    <p>{{ message['message'] }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="no-chats-message">
+            <p>No Chats to display.</p>
+        </div>
+    {% endif %}
+	    <a href="/clear-chats">Clear Chats</a>
+	    <a href="/export-chats">| Download Data</a>
+        <form method="POST" action="/chat">
+            <input type="text" name="message" placeholder="Type your message" required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+   <div class="logo"></div>
+<script>
+    // Function to fetch latest chat messages using AJAX
+    function fetchMessages() {
+        $.ajax({
+            url: "/get-messages",
+            type: "GET",
+            success: function(data) {
+                // Update the chat box with the new messages
+                $('.chat-box').html(data);
+            },
+            error: function(xhr, status, error) {
+                console.log(error);
+            }
+        });
+    }
+
+    // Call the fetchMessages function every 1 second
+    setInterval(fetchMessages, 1000);
+</script>
+
+</body>
+</html>
