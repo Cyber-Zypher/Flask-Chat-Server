@@ -1,0 +1,5 @@
+{% for message in messages %}
+    <div class="message {% if message['username'] == session['username'] %}sender-message{% else %}receiver-message{% endif %}">
+        <p>{{ message['message'] }}</p>
+    </div>
+{% endfor %}
