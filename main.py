@@ -6,7 +6,7 @@ import bcrypt
 import io
 
 app = Flask(__name__, template_folder='templates')
-app.secret_key = "51c485a293ee32d79b8700db67b69243759cb9adfbd60009"
+app.secret_key = "YOUR_SECRET_KEY"
 
 # MySQL configurations
 db_host = 'localhost'
