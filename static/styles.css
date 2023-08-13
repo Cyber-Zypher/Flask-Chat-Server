@@ -1,0 +1,155 @@
+body {
+    background-color: #e2e4ff;
+    font-family: Arial, sans-serif;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.logo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 512px;
+    height: 50px;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/vaultlyn-media.appspot.com/o/medusa.png?alt=media&token=ad60321a-7089-4d8a-b08c-87e4fc0b06c9');
+}
+
+h1 {
+    text-align: center;
+    color: #b4c1ff;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #888efa;
+}
+
+a:hover {
+    color: #6f75e0;
+}
+
+.chat-box {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    height: 600px;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.sender-message {
+    background-color: #a3b2ff;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.receiver-message {
+    background-color: #8295ff;
+    text-align: right;
+}
+
+.message p {
+    margin: 0;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f1edff;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    background-color: #eeecff;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #8c99fd;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #7e84ff;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    .chat-box {
+        height: 200px;
+    }
+
+    .message {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .message p {
+        font-size: 16px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
